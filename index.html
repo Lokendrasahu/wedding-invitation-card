@@ -86,9 +86,45 @@
       display: block;
     }
     @media print {
-      .print-btn {
-        display: none;
+      .print-btn, #qrModal {
+        display: none !important;
       }
+    }
+
+    /* Modal Styling */
+    #qrModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    #qrModal .modal-content {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 90%;
+      width: 400px;
+    }
+    #qrModal img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    #qrModal button {
+      padding: 10px 25px;
+      background: maroon;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -122,6 +158,28 @@
     <div class="footer" contenteditable="true">Your message here...</div>
   </div>
 
-  <button class="print-btn" onclick="window.print()">Print as PDF</button>
+  <button class="print-btn" onclick="showSupportQR()">Print as PDF</button>
+
+  <!-- QR Support Modal -->
+  <div id="qrModal">
+    <div class="modal-content">
+      <h3>Support Us ❤️</h3>
+      <p>If you liked this card, feel free to support with any amount.</p>
+      <img src="upi.png" alt="QR Code for Support">
+      <br>
+      <button onclick="continueToPrint()">Done</button>
+    </div>
+  </div>
+
+  <script>
+    function showSupportQR() {
+      document.getElementById("qrModal").style.display = "flex";
+    }
+
+    function continueToPrint() {
+      document.getElementById("qrModal").style.display = "none";
+      window.print();
+    }
+  </script>
 </body>
 </html>
