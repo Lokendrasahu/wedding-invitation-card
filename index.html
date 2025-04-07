@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Editable Wedding Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&family=Cormorant+Garamond&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 20px 10px;
+      font-family: 'Cormorant Garamond', serif;
+      background: #fff8f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card {
+      width: 100%;
+      max-width: 600px;
+      background: #fff;
+      padding: 25px 20px;
+      border: 5px solid maroon;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      color: #4B1C1C;
+    }
+    .ganesh {
+      width: 60px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: maroon;
+      margin-bottom: 8px;
+    }
+    .couple-names {
+      font-family: 'Great Vibes', cursive;
+      font-size: 34px;
+      color: maroon;
+      margin-bottom: 10px;
+    }
+    .weds {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: #444;
+      margin: 5px 0;
+    }
+    .schedule {
+      background: #fceee3;
+      border: 2px dashed maroon;
+      padding: 16px;
+      border-radius: 10px;
+      text-align: left;
+      margin: 18px 0;
+    }
+    .schedule h3 {
+      text-align: center;
+      margin-top: 0;
+      color: maroon;
+    }
+    .details {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .footer {
+      margin-top: 16px;
+      font-size: 14px;
+      font-style: italic;
+    }
+    [contenteditable] {
+      outline: none;
+    }
+    .print-btn {
+      margin: 30px auto 20px;
+      padding: 10px 25px;
+      font-size: 15px;
+      background: maroon;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      display: block;
+    }
+    @media print {
+      .print-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <img class="ganesh" src="https://www.shyamparivar.com/uploads/gallery/lord-ganesha-hd-wallpapers1.jpg" alt="Ganesh">
+    
+    <div class="title" contenteditable="true">Wedding Invitation</div>
+
+    <div class="couple-names">
+      <span contenteditable="true">Lokendra</span>
+      <div class="weds" contenteditable="true">weds</div>
+      <span contenteditable="true">Vijaylakshmi</span>
+    </div>
+
+    <div class="schedule">
+      <h3 contenteditable="true">Wedding Schedule</h3>
+      <div class="details" contenteditable="true">
+        <p><strong>Lagan & Mandap Poojan:</strong> 28 April 2025, Monday</p>
+        <p><strong>Devuthani & Mayn Ceremony:</strong> 29 April 2025, Tuesday</p>
+        <p><strong>Baraat & Wedding Rituals:</strong> 30 April 2025, Wednesday (Teka, Rajim)</p>
+        <p><strong>Ashirwad Samaroh:</strong> 1 May 2025, Thursday, Venue: Bhanpuri (Gurur)</p>
+      </div>
+    </div>
+
+    <div class="details" contenteditable="true">
+      Cordially Invited By<br>
+      Mr. Salik Ram Sahu (Purv Adhyaksh, Tahsil Sahu Sangh Gurur) and Family
+    </div>
+
+    <div class="footer" contenteditable="true">You are humbly invited to join us in the celebration</div>
+  </div>
+
+  <button class="print-btn" onclick="window.print()">Print as PDF</button>
+</body>
+</html>
