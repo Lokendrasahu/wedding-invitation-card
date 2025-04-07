@@ -126,6 +126,18 @@
       border-radius: 8px;
       cursor: pointer;
     }
+    .upi-btn {
+      display: inline-block;
+      margin: 10px auto 20px;
+      padding: 10px 25px;
+      background: #4CAF50;
+      color: white;
+      font-size: 15px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -166,6 +178,12 @@
       <h3>Support Us ❤️</h3>
       <p>If you liked this card, feel free to support with any amount.</p>
       <img src="upi.png" alt="QR Code for Support">
+
+      <!-- UPI Payment Button -->
+      <a href="upi://pay?pa=7692810889@amazonpay&pn=Support%20Creator&cu=INR" class="upi-btn">
+        Pay with any UPI App
+      </a>
+
       <br>
       <button onclick="continueToPrint()">Done</button>
     </div>
